@@ -30,8 +30,8 @@ export default function Post({
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+export async function getStaticPaths() {
+  const paths = await getAllPostIds()
   return {
     paths,
     fallback: false
